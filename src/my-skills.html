@@ -1,0 +1,184 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-styles/paper-styles.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html"
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-skills">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+
+      a{
+        text-decoration: none;
+        color:black;
+      }
+
+      .content{
+        min-height:730px;
+      }
+
+      app-toolbar{
+        background: teal;
+      }
+      app-header-layout {
+        background: #cfd8dc;
+      }
+      app-header {
+        color: #fff;
+        width:100%;
+        position:fixed;
+        background-color:teal;
+        background-image:url(../images/personnal/comp-image.jpg);
+        background-size: 1980px auto;
+        background-repeat:no-repeat;
+        background-position:center bottom;
+      }
+
+      .horizontal
+      {
+        max-width: 920px;
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+        padding:10px;
+      }
+
+      paper-card{
+        min-height:300px;
+        max-width:430px;
+        margin:10px;
+        --paper-card-header-image:{width:195px;height:auto;};
+      }
+
+      iron-icon.star{
+        color: #F9A825;
+      }
+    </style>
+    <app-drawer-layout force-narrow fullbleed>
+        <app-drawer>
+          <app-toolbar>
+              <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+          </app-toolbar>
+          <paper-listbox>
+            <a href="/accueil" drawer-toogle><paper-item>Home</paper-item></a>
+            <a href="/work" drawer-toggle><paper-item>Work</paper-item></a>
+            <a href="/contact" drawer-toggle><paper-item>Contact</paper-item></a>
+          </paper-listbox>
+        </app-drawer>
+        <app-header-layout>
+          <app-header fixed>
+            <app-toolbar>
+              <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+              <h4>Steven Madhow</h4>
+            </app-toolbar>
+          </app-header>
+          <div class="content">
+            <div class="horizontal">
+              <paper-card image="../images/personnal/java_icon.png">
+                <div class="card-content">
+                  <p>Java</p>
+                  <iron-icon class="star" icon=star></iron-icon>
+                  <iron-icon class="star" icon=star></iron-icon>
+                  <iron-icon class="star" icon=star></iron-icon>
+                  <iron-icon class="star" icon=star></iron-icon>
+                  <iron-icon class="star" icon=star></iron-icon>
+                </div>
+              </paper-card>
+              <paper-card image="../images/personnal/cpp.png">
+                <div class="card-content">
+                  <p>C++</p>
+                  <iron-icon class="star" icon=star></iron-icon>
+                  <iron-icon class="star" icon=star></iron-icon>
+                  <iron-icon class="star-gray" icon=star></iron-icon>
+                  <iron-icon class="star-gray" icon=star></iron-icon>
+                  <iron-icon class="star-gray" icon=star></iron-icon>
+                </div>
+              </paper-card>
+              <paper-card image="../images/personnal/csharp.jpg">
+                <div class="card-content">
+                    <p>C#</p>
+                  <iron-icon class="star" icon=star></iron-icon>
+                  <iron-icon class="star" icon=star></iron-icon>
+                  <iron-icon class="star" icon=star></iron-icon>
+                  <iron-icon class="star-gray" icon=star></iron-icon>
+                  <iron-icon class="star-gray" icon=star></iron-icon>
+                </div>
+              </paper-card>
+              <paper-card image="../images/personnal/C.png">
+                <div class="card-content">
+                    <p>C</p>
+                  <iron-icon class="star" icon=star></iron-icon>
+                  <iron-icon class="star" icon=star></iron-icon>
+                  <iron-icon class="star" icon=star></iron-icon>
+                  <iron-icon class="star-gray" icon=star></iron-icon>
+                  <iron-icon class="star-gray" icon=star></iron-icon>
+                </div>
+              </paper-card>
+            </div>
+            <div class="horizontal">
+              <paper-card image="../images/personnal/system.png">
+                <div class="card-content">
+                    <p>Admin System</p>
+                  <iron-icon class="star" icon=star></iron-icon>
+                  <iron-icon class="star-gray" icon=star></iron-icon>
+                  <iron-icon class="star-gray" icon=star></iron-icon>
+                  <iron-icon class="star-gray" icon=star></iron-icon>
+                  <iron-icon class="star-gray" icon=star></iron-icon>
+                </div>
+              </paper-card>
+              <paper-card image="../images/personnal/bd.png">
+                <div class="card-content">
+                    <p>Base de données</p>
+                  <iron-icon class="star" icon=star></iron-icon>
+                  <iron-icon class="star" icon=star></iron-icon>
+                  <iron-icon class="star-gray" icon=star></iron-icon>
+                  <iron-icon class="star-gray" icon=star></iron-icon>
+                  <iron-icon class="star-gray" icon=star></iron-icon>
+                </div>
+              </paper-card>
+              <paper-card image="../images/personnal/web.png">
+                <div class="card-content">
+                    <p>Web</p>
+                  <iron-icon class="star" icon=star></iron-icon>
+                  <iron-icon class="star" icon=star></iron-icon>
+                  <iron-icon class="star" icon=star></iron-icon>
+                  <iron-icon class="star" icon=star></iron-icon>
+                  <iron-icon class="star-gray" icon=star></iron-icon>
+                </div>
+              </paper-card>
+            </div>
+          </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-skills'
+    });
+  </script>
+</dom-module>

@@ -1,0 +1,100 @@
+<dom-module id="my-contact">
+  <template>
+		<style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+
+       app-toolbar{
+        background: teal;
+      }
+      app-header-layout {
+        background: #cfd8dc;
+      }
+      app-header {
+        color: #fff;
+        width:100%;
+        position:fixed;
+        background-color:teal;
+        background-image:url(../images/personnal/comp-image.jpg);
+        background-size: 1980px auto;
+        background-repeat:no-repeat;
+        background-position:center bottom;
+      }
+
+      a{
+        text-decoration: none;
+        color:black;
+      }
+
+      .content{
+        min-height: 700px;
+      }
+
+      form{
+        max-width: 920px;
+        margin:10px;
+        margin-top:20px;
+        background: white;
+        padding: 10px;
+        border-radius:3px;
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      paper-button{
+        color:white;
+        background: teal;
+      }
+
+
+    </style>
+    <app-drawer-layout force-narrow fullbleed>
+        <app-drawer>
+          <app-toolbar>
+              <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+          </app-toolbar>
+          <paper-listbox>
+            <a href="/accueil" drawer-toogle><paper-item>Home</paper-item></a>
+            <a href="/skills" drawer-toggle><paper-item>Skills</paper-item></a>
+            <a href="/contact" drawer-toggle><paper-item>Contact</paper-item></a>
+          </paper-listbox>
+        </app-drawer>
+        <app-header-layout>
+          <app-header fixed>
+            <app-toolbar>
+              <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+              <h4>Steven Madhow</h4>
+            </app-toolbar>
+          </app-header>
+          <div class="content">
+          <form is="iron-form" id="eventContactMail">
+            <gold-email-input label="Email" auto-validate required></gold-email-input>
+            <paper-textarea label="Votre Message" required></paper-textarea>
+            <paper-button onclick="_delayedSubmit(event)" id="sendMailButton">Send</paper-button>
+          </form>
+        </div>
+        </app-header-layout>
+    </app-drawer-layout>
+ </template>
+  <script>
+    Polymer({
+      is:'my-contact'
+    });
+
+    eventContactMail.addEventListener('change', function(event){
+      sendMailButton.disabled = !eventContactMail.validate();
+    });
+
+    document.getElementById('eventContactMail').addEventListener('iron-form-submit',function(event){
+      sendMailButton.disabled = false;
+    });
+
+    function _delayedSubmit(event)
+    {
+      sendMailButton.disabled=true;
+    }
+  </script>
+</dom-module>

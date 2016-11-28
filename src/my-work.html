@@ -1,0 +1,119 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-work">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+
+       app-toolbar{
+        background: teal;
+      }
+      app-header-layout {
+        background: #cfd8dc;
+      }
+      app-header {
+        color: #fff;
+        width:100%;
+        position:fixed;
+        background-color:teal;
+        background-image:url(../images/personnal/comp-image.jpg);
+        background-size: 1980px auto;
+        background-repeat:no-repeat;
+        background-position:center bottom;
+      }
+
+      a{
+        text-decoration: none;
+        color:black;
+      }
+
+      paper-card{
+        margin-top:17px;
+        display:block;
+        max-width: 920px;
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      paper-card paper-button {
+        background-color: teal;
+      }
+
+      paper-card a {
+        color:white;
+      }
+
+      paper-card.right{
+        --paper-card-content:{margin-top:10%;max-width:49%;};
+        --paper-card-actions:{max-width:49%;};
+      }
+
+    </style>
+    <app-drawer-layout force-narrow fullbleed>
+        <app-drawer>
+          <app-toolbar>
+              <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+          </app-toolbar>
+          <paper-listbox>
+            <a href="/accueil" drawer-toogle><paper-item>Home</paper-item></a>
+            <a href="/skills" drawer-toggle><paper-item>Skills</paper-item></a>
+            <a href="/contact" drawer-toggle><paper-item>Contact</paper-item></a>
+          </paper-listbox>
+        </app-drawer>
+        <app-header-layout>
+          <app-header fixed>
+            <app-toolbar>
+              <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+              <h4>Steven Madhow</h4>
+            </app-toolbar>
+          </app-header>
+          <paper-card heading="Street Marketer" class="right">
+            <div class="card-content">
+              <h4>Dec 2009 - Mai 2010<br/>Agence Posterscope</h4>
+            </div>
+            <div class="card-actions">
+              <div>Recuperation flyers</div>
+              <div>Distribution</div>
+            </div>
+          </paper-card>
+          <paper-card heading="Equipier de caisse" class="right">
+            <div class="card-content">
+              <h4>Oct 2013 - Jan 2016<br/>Simply Market Reuilly<h4>
+            </div>
+            <div class="card-actions">
+              <div>Encaissement</div>
+              <div>Comptage de monnaie</div>
+              <div>Mise en place des produits en rayon</div>
+              <div>Rangement en rayons</div>
+            </div>
+          </paper-card>
+          <paper-card heading="Alternant Analyste Developpeur"class="right">
+            <div class="card-content">
+              <h4>Jan 2016 - Nov 2017<br/>ACMS - Asso</h4>
+            </div>
+            <div class="card-actions">
+              <div>Programmation Java JEE</div>
+              <div>Analyse de code</div>
+              <div>Analyse des besoins</div>
+              <div>Conception technique</div>
+              <div>Redaction des specifications</div>
+              <div>Maintenance</div>
+            </div>
+          </paper-card>
+        </app-header-layout>
+    </app-drawer-layout>
+  </template>
+
+  <script>
+    Polymer({
+      is:'my-work'
+    });
+  </script>
+</dom-module>

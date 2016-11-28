@@ -1,0 +1,179 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-accueil">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+        padding: 10px;
+      }
+
+      app-header-layout {
+        background: #cfd8dc;
+      }
+      app-header {
+        color: #fff;
+        width:100%;
+        position:fixed;
+        background-color:teal;
+        background-image:url(../images/personnal/comp.png);
+        background-size: 800px auto;
+        background-repeat:no-repeat;
+        background-position:right bottom;
+      }
+      
+      app-drawer app-toolbar{
+        background: teal;
+        --paper-icon-button-ink-color: white;
+      }
+
+
+      app-header paper-icon-button {
+        --paper-icon-button-ink-color: white;
+      }
+
+         paper-card.white {
+       --paper-card-header-color: #fff;
+      }
+
+      paper-card{
+        margin-top:17px;
+        display:block;
+        max-width: 920px;
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      paper-card paper-button {
+        background-color: teal;
+      }
+
+      paper-card a {
+        color:white;
+      }
+
+      paper-card.right{
+        min-height:300px;
+        --paper-card-content:{margin-top:10%;max-width:49%;};
+        --paper-card-actions:{max-width:49%;};
+      }
+
+      paper-item:hover{
+        cursor:pointer;
+      }
+
+      a{
+        text-decoration: none;
+        color:black;
+      }
+
+      paper-card.work {
+        background: url("../images/personnal/travail.jpg");
+        background-color: white;
+        background-repeat: no-repeat;
+        background-size: 40%;
+        background-position: right;
+      }
+
+      paper-card.skills {
+        background: url("../images/personnal/languages.png");
+        background-color: white;
+        background-repeat: no-repeat;
+        background-size: 28%;
+        background-position: 90%;
+      }
+
+            #content{
+        min-height:1920px;
+      }
+
+    </style>
+    <app-drawer-layout force-narrow fullbleed>
+        <app-drawer>
+          <app-toolbar>
+              <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+          </app-toolbar>
+          <paper-listbox>
+            <a href="/work"><paper-item >Work</paper-item></a>
+            <a href="/skills"><paper-item >Skills</paper-item></a>
+            <a href="/contact"><paper-item>Contact</paper-item></a>
+          </paper-listbox>
+        </app-drawer>
+        <app-header-layout>
+          <app-header style="height:600px" condenses fixed effects="resize-title parallax-background">
+            <app-toolbar>
+              <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+              <h4 condensed-title>Steven Madhow</h4>
+            </app-toolbar>
+            <app-toolbar>
+              <h1 main-title style="color:white;">Steven Madhow<br/>Analyste Developpeur</h1>
+            </app-toolbar>
+          </app-header>
+            <div id="content">
+                  <paper-card heading="About Me" image="../images/personnal/stvmad.jpg" alt="Emmental" style="margin:5px;display:block;max-width:920px;margin-left:auto;margin-right:auto;" class="white">
+                    <div class="card-content">
+                      Hello, je me présente, Steven Madhow, analyste développeur. Intéressé par la programmation, j'essaye de toucher à tout ce qui se rapproche de près ou de loin au developpement
+                      d'applications informatiques. Les grosses évolutions dans le monde du web et la facilité d'accès aux technologies de ce domaine m'ont poussé à porter un intérêt dessus.
+                      Ainsi, fort de mes compétences en back-end, je m'essaye au développement d'interfaces orientées matérial-design. Vous pouvez me contacter via le formulaire de contact si après.
+                      N'hesitez pas si vous rencontrez des incohérences! L'important c'est d'évoluer!
+                    </div>
+                  </paper-card>
+
+                  <paper-card class="work right" heading="Work">
+                      <div class="card-content">
+                        <div class="rate-header"><p>Voici la liste des Jobs et expériences professionnelles que j'ai effectuées depuis l'obtention de mon baccalauréat</p></div>
+                      </div>
+                    <div class="card-actions">
+                      <a href="/work">
+                      <paper-button >Go to works</paper-button>
+                      </a>
+                    </div>
+                  </paper-card>
+                  <paper-card heading="Skills" class="skills right">
+                    <div class="card-content">
+                      Ici se trouve la liste des langages et technologies maîtrisés. Chaque langage aura une notation correspondant au niveau de connaissance sur ce langage.
+                    </div>
+                    <div class="card-actions">
+                      <a href="/skills">
+                      <paper-button >Go to skills</paper-button>
+                      </a>
+                    </div>
+                  </paper-card>
+                  <paper-card heading="Contact" class="rights">
+                    <div class="card-content">
+                      <!-- insert gold element here -->
+                      <!--<form is="iron-form" id="eventContactMail"> -->
+                      <gold-email-input label="Email" auto-validate required></gold-email-input>
+                      <paper-textarea label="Votre Message" required></paper-textarea>
+                    </div>
+                    <div class="card-actions">
+                      <a>
+                      <paper-button >Send</paper-button>
+                      </a>
+                    </div>
+                  </paper-card>
+            </div>
+        </app-header-layout>
+    </app-drawer-layout>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-accueil'
+    });
+  </script>
+</dom-module>
